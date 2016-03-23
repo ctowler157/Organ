@@ -1,2 +1,4 @@
 var Dispatcher = require('./dispatcher/Dispatcher');
-debugger
+var Note = require('./util/Note');
+
+window.Note = Note;
