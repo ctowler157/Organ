@@ -1,2 +1,4 @@
-var Dispatcher = require('flux').Dispatcher;
-module.exports = new Dispatcher();
+var OrganDispatcher = require('flux').Dispatcher;
+
+
+module.exports = new OrganDispatcher();

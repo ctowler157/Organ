@@ -18,6 +18,7 @@ var createGainNode = function () {
 };
 
 var Note = function (freq) {
+  this.freq = freq;
   this.oscillatorNode = createOscillator(freq);
   this.gainNode = createGainNode();
   this.oscillatorNode.connect(this.gainNode);
