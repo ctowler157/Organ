@@ -43,4 +43,5 @@ li > div {
   display: block;
   padding: 20px;
   background-color: #007dc1;
+  border-radius: 5px;
 }

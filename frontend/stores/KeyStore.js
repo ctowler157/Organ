@@ -31,6 +31,10 @@ KeyStore.__onDispatch = function(payload) {
   KeyStore.includes = function (note) {
     return _notes.includes(note);
   };
+
+  KeyStore.notes = function () {
+    return _notes.slice();
+  };
 };
 
 module.exports = KeyStore;
