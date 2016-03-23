@@ -5,13 +5,15 @@ var NoteConstants =  require('./../constants/NoteConstants');
 
 var _notes = [];
 var addNote = function (note) {
-  _notes.push(note);
-  KeyStore.__emitChange();
+  if (_notes.indexOf(note) === -1){
+    _notes.push(note);
+    KeyStore.__emitChange();
+  }
 };
 
 var removeNote = function (note) {
   if (_notes.indexOf(note) !== -1){
-    _notes.splice(_notes.indexOf(note, 1));
+    _notes.splice(_notes.indexOf(note), 1);
     KeyStore.__emitChange();
   }
 };
@@ -25,6 +27,10 @@ KeyStore.__onDispatch = function(payload) {
       removeNote(payload.note);
       break;
   }
+
+  KeyStore.includes = function (note) {
+    return _notes.includes(note);
+  };
 };
 
 module.exports = KeyStore;

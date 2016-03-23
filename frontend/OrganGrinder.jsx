@@ -1,6 +1,11 @@
-var Dispatcher = require('./dispatcher/Dispatcher');
-var Note = require('./util/Note');
+var React = require('react');
+var ReactDOM = require('react-dom');
 var util = require('./util/KeyListener');
-var KeyStore = require('./stores/KeyStore');
+var Organ = require('./components/Organ');
 
-window.Note = Note;
+
+$(function () {
+  ReactDOM.render(
+    <Organ />, document.getElementById("content")
+  );
+});
